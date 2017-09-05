@@ -1,34 +1,30 @@
 ---
 layout: default
-title: Notes
+title: Projects
 notes: active
-description: Projects from Greg Kiar on the website gkiar.github.io, the personal website for Greg Kiar, a Canadian Neurocartographer, Biomedical Engineer, and Data Visualization enthusiast working and living in Baltimore.
+description: Projects from Greg Kiar on the website gkiar.github.io, the personal website for Greg Kiar, a Neurocartographer, Biomedical Engineer, and Data Visualization enthusiast working and living in Montreal.
 ---
 
 {% assign owner = site.github.owner_url %}
 <div class="list-group">
 	{% assign repos = site.github.public_repositories | sort:'updated_at' | reverse %}
 	{% assign odd = true %}
-	{% for repository in repos limit:25  %}
+	{% for repository in repos limit:15  %}
 			{% if odd == true %}
 				{% assign odd = false %}
-  			<a href="{{ repository.html_url }}" class="list-group-item active">
+  			<a href="{{ repository.html_url }}" style="border-width:0px;" class="list-group-item">
 			{% else %}
 				{% assign odd = true %}
-  			<a href="{{ repository.html_url }}" class="list-group-item">
+  			<a href="{{ repository.html_url }}" style="border-width:0px;" class="list-group-item">
 			{% endif %}
-    			<p class="list-group-item-heading" style="display:inline">{{ repository.name }} </p>
+    			<p class="list-group-item-heading" style="display:inline; color:#428bca">{{ repository.name }} </p>
 						{% if repository.description %}
     					<p class="list-group-item-text" style="font-size:small">&raquo;{{ repository.description }}</p>
 						{% endif %}
 					<p class="list-group-item-text" style="font-size:small"><em>(Last modified: {{repository.updated_at | date_to_string }})</em></p>
   			</a>
 	{% endfor %}
-			{% if odd == true %}
-  			<a href="{{ owner }}" class="list-group-item active">
-			{% else %}
-  			<a href="{{ owner }}" class="list-group-item">
-			{% endif %}
+  			<a href="{{ owner }}" style="border-width:0px;" class="list-group-item">
     		<h4 class="list-group-item-heading" style="display:inline"> + </h4>
   			</a>
 </div>
