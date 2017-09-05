@@ -9,7 +9,7 @@ description: Projects from Greg Kiar on the website gkiar.github.io, the persona
 <div class="list-group">
 	{% assign repos = site.github.public_repositories | sort:'updated_at' | reverse %}
 	{% assign odd = true %}
-	{% for repository in repos limit:15  %}
+	{% for repository in repos limit:12  %}
 			{% if odd == true %}
 				{% assign odd = false %}
   			<a href="{{ repository.html_url }}" style="border-width:0px;" class="list-group-item">
