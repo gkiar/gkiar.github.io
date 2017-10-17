@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="author" content="Gregory Kiar">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:200,400" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/gregarized.css" id="theme">
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+
+<!-- Printing and PDF exports -->
+<script>
+	var link = document.createElement( 'link' );
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+	document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+
+<title>Ph.D. Preliminary Meeting 2017-10-19</title>
+</head>
+
+<body>
+<div class="reveal">
+	<!-- Any section element inside of this container is displayed as a slide -->
+	<div class="slides">
+
+<!-- ******************************* -->
+
+	<section id="front-matter" data-background="img/bg.png">
+		<section id="title" data-background="img/bg.png">
+			<h3 style="display:inline">reliable, robust, and accessible</h3><br/>
+      <h3>big data neuroscience</h3>
+			<h4>Ph.D. Preliminary Meeting</h4>
+      <small>2017-10-19</small><br/>
+			<p>
+				<small><a href="https://gkiar.me">Gregory Kiar</a></small>
+			</p>
+		</section>
+
+		<section id="toc" data-background="img/bg.png">
+			<h2>Outline</h2>
+			<ul>
+				<li>background</li>
+				<li>clowdr</li>
+				<li>provenance graph evaluation</li>
+				<li>extend neuroinformatic analysis</li>
+		</section>
+	</section>
+
+<!-- ******************************* -->
+
+	<section data-background="img/bg.png">
+		<section data-background="img/bg.png">
+			<h2>background</h2>
+			<ul>
+				<li>data collection and federation is booming</li>
+				<li>but a reproducibility crisis plagues science</li>
+				<li>we need for stable methods and evaluation</li>
+			</ul>
+		</section>
+
+		<section data-background="img/bg.png">
+      <h2>the "plan"</h2>
+			<ul>
+				<li>extend platforms for HPC in the cloud</li>
+				<li>create framework for evaluating prov. graphs</li>
+				<li>replicate and improve impactful study</li>
+			</ul>
+		</section>
+	</section>
+
+<!-- ******************************* -->
+
+	<section data-background="img/bg.png">
+		<section  data-background="img/bg.png">
+			<h2>clowdr</h2>
+      <ul>
+        <li>Streamlining the tool-to-impact cycle</li>
+        <li>Prototype, parallelize, and publish</li>
+        <li>Microservice: no server, no database</li>
+      </ul>
+		</section>
+		<section  data-background="img/bg.png">
+      <img src="img/clowdr_controller.png"/>
+		</section>
+		<section  data-background="img/bg.png">
+      <img src="img/clowdr_task.png"/>
+		</section>
+		<section  data-background="img/bg.png">
+      <h2>clowdr + cbrain = cc</h2>
+      <ul>
+        <li>a common API for data and compute</li>
+        <li>CBRAIN as a portal for Compute Canada</li>
+      </ul>
+		</section>
+	</section>
+
+<!-- ******************************* -->
+
+	<section data-background="img/bg.png">
+		<section data-background="img/bg.png">
+			<h2>provenance graphs</h2>
+      <ul>
+        <li>We are able to record pipeline operations</li>
+        <li>These recording </li>
+      </ul>
+		</section>
+	</section>
+
+<!-- ******************************* -->
+
+	<section data-background="img/bg.png">
+		<section data-background="img/bg.png">
+			<h2>neuroinformatics tools</h2>
+		</section>
+	</section>
+
+<!-- ******************************* -->
+
+	<section data-background="img/bg.png">
+    <section data-background="img/bg.png">
+			<h2>acknowledgements</h2>
+      <small>
+      <p>Thanks to:</p>
+			<ul>
+				<li>Tristan Glatard</li>
+				<li>Alan C. Evans</li>
+				<li>J.B. Poline</li>
+				<li>Pierre Bellec</li>
+				<li>Christine Tardif</li>
+				<li>Joshua T. Vogelstein</li>
+				<li>Heather Keightly</li>
+				<li>Labmates & Friends</li>
+			</ul>
+      <p>... for all of the proof reading, brain storming, editing, listening, and support.</p>
+      </small>
+		</section>
+		<section data-background="img/bg.png">
+			<h2>references</h2>
+      <p>All references can be found in my <a href="../docs/preliminary_meeting.pdf">proposal</a>.</p>
+    </section>
+		<section data-background="img/bg.png">
+			<h1>Thank you!!!</h1>
+		</section>
+	</section>
+
+<!-- ******************************* -->
+
+	</div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+<script>
+	// More info https://github.com/hakimel/reveal.js#configuration
+	Reveal.initialize({
+		controls: false,
+		progress: true,
+		history: true,
+		center: true,
+		touch: true,
+		width: 886,
+		height: 700,
+		slideNumber: true,
+		hideAddressBar: true,
+		previewLinks: false,
+		parallaxBackgroundImage: 'img/bg.png',
+		parallaxBackgroundSize: '2516px 1988px',
+		parallaxBackgroundHorizontal: 0,
+		parallaxBackgroundVertical: 0,
+		transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+		// More info https://github.com/hakimel/reveal.js#dependencies
+		dependencies: [
+			{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'plugin/zoom-js/zoom.js', async: true },
+			{ src: 'plugin/notes/notes.js', async: true }
+		]
+	});
+
+</script>
+</body>
+</html>

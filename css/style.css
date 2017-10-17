@@ -10,9 +10,15 @@ blockquote p { font-size: 16px; line-height: 1.6em; }
 /* Masthead */
 .header, .footer, .header h3 { font-family: 'Montserrat', Helvetica, sans-serif; text-transform: uppercase; font-weight: normal; }
 
+.about a { color: inherit; text-decoration: none; border-bottom: 1px #333 dotted;}
+.about a:hover { color: #0088cc; text-decoration: none; border-bottom: 1px #0088cc dotted;}
+.marketing a { color: inherit; text-decoration: none; border-bottom: 1px #333 dotted;}
+.marketing a:hover { color: #0088cc; text-decoration: none; border-bottom: 1px #0088cc dotted;}
+
 /* Navigation */
 h3.text-muted a {text-decoration: none; color: #999999; }
 h3.text-muted a:hover { text-decoration: none; color: #0088cc; }
+
 
 img.avatar { margin-bottom: 30px; }
 		
