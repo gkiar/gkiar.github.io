@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Bio Sketch
-description: Biography about Greg Kiar on the website gkiar.github.io, the personal website for Greg Kiar, a Neurocartographer, Biomedical Engineer, and Data Visualization enthusiast working and living in Montreal.
+title: Greg Kiar
+description: Bio Sketch
 ---
 
 ## Bio Sketch
