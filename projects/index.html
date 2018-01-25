@@ -5,17 +5,32 @@ notes: active
 description: Projects
 ---
 
+<div class="about" style="text-align:justify">
+
+<h2>Projects</h2>
+
+<p>Below is an auto-generated list of the repositories I've recently worked on as an approximation of
+my "current projects" (for a more up-to-date list check out my GitHub profile, linked in the fooer).</p>
+
 {% assign owner = site.github.owner_url %}
 <div class="list-group">
 	{% assign repos = site.github.public_repositories | sort:'updated_at' | reverse %}
 	{% assign odd = true %}
-	{% for repository in repos limit:12  %}
+  {% assign count = 0 %}
+	<div class="row">
+	{% for repository in repos limit:11  %}
+			{% assign count = count + 1 %}
+			{% if count >= 2 %}
+				{% assign count = 0 %}
+				</div>
+				<div class="row">
+			{% endif %}
 			{% if odd == true %}
 				{% assign odd = false %}
-  			<a href="{{ repository.html_url }}" style="border-width:0px;" class="list-group-item">
+  			<a href="{{ repository.html_url }}" style="border-width:0px; min-height:100px" class="list-group-item col-sm-6">
 			{% else %}
 				{% assign odd = true %}
-  			<a href="{{ repository.html_url }}" style="border-width:0px;" class="list-group-item">
+  			<a href="{{ repository.html_url }}" style="border-width:0px; min-height:100px" class="list-group-item col-sm-6">
 			{% endif %}
     			<p class="list-group-item-heading" style="display:inline; color:#428bca">{{ repository.name }} </p>
 						{% if repository.description %}
@@ -24,7 +39,9 @@ description: Projects
 					<p class="list-group-item-text" style="font-size:small"><em>(Last modified: {{repository.updated_at | date_to_string }})</em></p>
   			</a>
 	{% endfor %}
-  			<a href="{{ owner }}" style="border-width:0px;" class="list-group-item">
-    		<h4 class="list-group-item-heading" style="display:inline"> + </h4>
+  			<a href="{{ owner }}" style="border-width:0px; min-height:100px" class="list-group-item col-sm-6">
+    		<h4 class="list-group-item-heading" style="display:inline; vertical-align:center"> + more </h4>
   			</a>
+				</div>
+  </div>
 </div>
