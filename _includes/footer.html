@@ -3,6 +3,8 @@
 	<div class="col-sm-3">
 	<p><small>&copy; greg kiar 2018</small></p>
 	</div>
+	<div class="col-sm-2">
+	</div>
 	<div class="col-sm-1">
 	<p><a style="color:#0088cc; border-bottom: none;" href="{{ site.baseurl }}/index.html"><i class='fa fa-home'></i></a></p>
 	</div>
@@ -36,8 +38,20 @@
 		<a style="color:#0088cc; border-bottom: none;" href="https://beta.doodle.com/gkiar"><i class='fa fa-calendar'></i></a>
   </p>
 	</div>
-	<div class="col-sm-2">
-	<p class="pull-right"><small><a style="color:#333" href="/about" title="About this site">site info</a></small></p>
-	</div>
 	</div>
 </div> <!-- /footer -->
+<script type="text/javascript" src="/js/jquery.min.js"></script>  <!-- JQuery is used in this example, line 18, but is not actually used in brainsprite.js -->
+<script type="text/javascript" src="/js/brainsprite.min.js"></script>
+
+<script>
+
+// On load: build all figures
+$( window ).load(function() {
+  // Create brain slices
+  var brain = brainsprite({
+    canvas: "3Dviewer", // That is the ID of the canvas to build slices into
+    sprite: "spriteImg", // That is the ID of the sprite image that includes all (sagital) brain slices
+    nbSlice: { 'Y':233 , 'Z':189 }
+  });
+});
+</script>
