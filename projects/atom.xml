@@ -1,27 +1,25 @@
----
-layout: feed
----
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>Notes from Greg Kiar</title>
  <link href="http://gkiar.github.io/notes/atom.xml" rel="self"/>
  <link href="http://gkiar.github.io/notes/"/>
- <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <updated>2021-03-31T14:03:12-05:00</updated>
  <id>http://gkiar.github.io/notes/</id>
  <author>
    <name>Greg Kiar</name>
    <email>gkiar07@gmail.com</email>
  </author>
 
- {% for post in site.posts %}
+ 
  <entry>
-   <title>{{ post.title }}</title>
-   <link href="http://gkiar.github.io{{ post.url }}"/>
-   <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>http://gkiar.github.io/notes{{ post.id }}</id>
-   <content type="html">{{ post.content | xml_escape }}</content>
+   <title>Just getting started</title>
+   <link href="http://gkiar.github.io/notes/2016/09/29/hello-world"/>
+   <updated>2016-09-29T00:00:00-05:00</updated>
+   <id>http://gkiar.github.io/notes/notes/2016/09/29/hello-world</id>
+   <content type="html">&lt;p&gt;I am just making this note so that I don’t forget how to make notes in the future. :)&lt;/p&gt;
+</content>
  </entry>
- {% endfor %}
+ 
  
 </feed>

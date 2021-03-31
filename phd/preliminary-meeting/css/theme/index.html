@@ -4,12 +4,12 @@
 	<head>
 	<meta charset="utf-8">
 	<meta name="viewport" width="device-width, initial-scale=1.0">
-	<meta name="description" content="Home">
+	<meta name="description" content="">
 	<meta name="author" content="Greg Kiar">
 	<!-- favicon
 	<link rel="shortcut icon" href="/img/ico/favicon.png">
 	-->
-	<title>Greg Kiar | Home</title>		
+	<title>Dependencies | </title>		
 	<!-- styles -->
 	<link href="/css/bootstrap.css" rel="stylesheet">
 	<link href="/css/jumbotron-narrow.css" rel="stylesheet">
@@ -43,27 +43,44 @@
 			<div class="header">
 	<ul class="nav nav-pills pull-right topper">
 		<li class=""><a href="/bio" title="Bio">Bio</a></li>
-		<li class="passive"><a href="/cv" title="CV">CV</a></li>
+		<li class=""><a href="/cv" title="CV">CV</a></li>
 		<!-- <li class=""><a href="/projects" title="Projects">Projects</a></li> -->
 		<li class=""><a href="/phd" title="Ph.D.">Ph.D.</a></li>
 		<li class=""><a href="/projects" title="Projects">Projects</a></li>
-		<li class="passive"><a href="/contact" title="Contact">Contact</a></li>
+		<li class=""><a href="/contact" title="Contact">Contact</a></li>
 	</ul>
 	<h3 class="text-muted"><a href="/">Greg Kiar</a></h3>
 </div> <!-- /header -->
 
 			
-			<!-- <div class="jumbotron"> -->
-<div class="row marketing">
-	<div class="col-sm-4">
-	<img  class="img-circle avatar" alt="Greg Kiar" width=200px src="img/gkiar_newer_smaller.png">
-	</div>
-	<div itemscope itemtype="http://data-vocabulary.org/Person" class="col-sm-8">
-	<p class="lead">Hey there, I'm <span itemprop="name">Greg Kiar</span> and I develop software tools for lowering the barrier for entry to performing and evaluating reproducible science.</p>
-	<p>I trained as a <span itemprop="title">biomedical engineer</span>, and work as an <span itemprop="title">informatician</span> and <span itemprop="title">pretend neuroscientist</span>. Since beginning my Ph.D. in the <a href="http://www.mcgill.ca/neuro/neuro-brain-research-patient-care-and-training">Montreal Neurological Institute</a> at <span itemprop="affiliation"><a href="http://mcgill.ca">McGill University</a></span>, I have focused on evaluating the trustworthiness and stability of tools in neuroimaging, in an effort to increase both the transparency surrounding results and the robustness of biomarkers we wish to derive from them.</p>
-	</div>
-</div>
-<!-- </div> -->
+			<h2 id="dependencies">Dependencies</h2>
+
+<p>Themes are written using Sass to keep things modular and reduce the need for repeated selectors across files. Make sure that you have the reveal.js development environment including the Grunt dependencies installed before proceding: https://github.com/hakimel/reveal.js#full-setup</p>
+
+<h2 id="creating-a-theme">Creating a Theme</h2>
+
+<p>To create your own theme, start by duplicating a <code class="language-plaintext highlighter-rouge">.scss</code> file in <a href="https://github.com/hakimel/reveal.js/blob/master/css/theme/source">/css/theme/source</a>. It will be automatically compiled by Grunt from Sass to CSS (see the <a href="https://github.com/hakimel/reveal.js/blob/master/Gruntfile.js">Gruntfile</a>) when you run <code class="language-plaintext highlighter-rouge">grunt css-themes</code>.</p>
+
+<p>Each theme file does four things in the following order:</p>
+
+<ol>
+  <li>
+    <p><strong>Include <a href="https://github.com/hakimel/reveal.js/blob/master/css/theme/template/mixins.scss">/css/theme/template/mixins.scss</a></strong>
+Shared utility functions.</p>
+  </li>
+  <li>
+    <p><strong>Include <a href="https://github.com/hakimel/reveal.js/blob/master/css/theme/template/settings.scss">/css/theme/template/settings.scss</a></strong>
+Declares a set of custom variables that the template file (step 4) expects. Can be overridden in step 3.</p>
+  </li>
+  <li>
+    <p><strong>Override</strong>
+This is where you override the default theme. Either by specifying variables (see <a href="https://github.com/hakimel/reveal.js/blob/master/css/theme/template/settings.scss">settings.scss</a> for reference) or by adding any selectors and styles you please.</p>
+  </li>
+  <li>
+    <p><strong>Include <a href="https://github.com/hakimel/reveal.js/blob/master/css/theme/template/theme.scss">/css/theme/template/theme.scss</a></strong>
+The template theme file which will generate final CSS output based on the currently defined variables.</p>
+  </li>
+</ol>
 
 			
 			<div class="footer">
