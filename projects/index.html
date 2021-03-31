@@ -19,12 +19,13 @@ my "current projects" (for a more up-to-date list check out my GitHub profile, l
 	<div class="row">
 	{% for repository in repos limit:11  %}
 			{% assign count = count | plus : 1 %}
-  			<a href="{{ repository.html_url }}" style="border-width:0px; min-height:140px; border-radius:20px; background-color:#f3f3f3; margin:5px; width:31%" class="list-group-item col-sm-4">
+  			<a href="{{ repository.html_url }}" style="border-width:0px; min-height:140px; border-radius:20px; margin:5px; width:31%" class="list-group-item col-sm-4">
     		<p class="list-group-item-heading" style="display:inline; color:#428bca">{{ repository.name }} </p>
 					{% if repository.description %}
     				<p class="list-group-item-text" style="font-size:small">&raquo;{{ repository.description }}</p>
 					{% endif %}
-				<p class="list-group-item-text" style="font-size:small"><em>(Last modified: {{repository.updated_at | date_to_string }})</em></p>
+        
+				<p class="list-group-item-text" style="margin-top:5px; font-size:small"><em>(Last modified: {{repository.updated_at | date_to_string }})</em></p>
   			</a>
 			{% if count >= 3 %}
 				{% assign count = 0 %}
@@ -32,8 +33,8 @@ my "current projects" (for a more up-to-date list check out my GitHub profile, l
 				<div class="row">
 			{% endif %}
 	{% endfor %}
-  			<a href="{{ owner }}" style="border-width:0px; min-height:140px; border-radius:20px; background-color:#f3f3f3; margin:5px; width:31%" class="list-group-item col-sm-4">
-    		<h4 class="list-group-item-heading" style="display:inline; vertical-align:center"> + more </h4>
+  			<a href="{{ owner }}" style="border-width:0px; min-height:140px; border-radius:20px; margin:5px; width:31%" class="list-group-item col-sm-4">
+    		<h4 class="list-group-item-heading" style="display:inline; vertical-align:middle"> + more </h4>
   			</a>
 				</div>
   </div>
