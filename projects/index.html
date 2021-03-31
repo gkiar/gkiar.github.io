@@ -1,262 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-	
-	<head>
-	<meta charset="utf-8">
-	<meta name="viewport" width="device-width, initial-scale=1.0">
-	<meta name="description" content="Projects">
-	<meta name="author" content="Greg Kiar">
-	<!-- favicon
-	<link rel="shortcut icon" href="/img/ico/favicon.png">
-	-->
-	<title>Greg Kiar | Projects</title>		
-	<!-- styles -->
-	<link href="/css/bootstrap.css" rel="stylesheet">
-	<link href="/css/jumbotron-narrow.css" rel="stylesheet">
-	<link href="/css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/academicons.css"/>
-	
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-  <script src="../../assets/js/html5shiv.js"></script>
-  <script src="../../assets/js/respond.min.js"></script>
-	<![endif]-->
-	<!-- google analytics - i will not share this data with google -->
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-	<!--		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+---
+layout: default
+title: Greg Kiar
+notes: active
+description: Projects
+---
 
-		  ga('create', 'UA-######', 'gkiar.github.io');
-		  ga('send', 'pageview');
-
-		</script> -->
-	
-</head>
-
-	
-	<body>
-		<div class="container">
-			
-			<div class="header">
-	<ul class="nav nav-pills pull-right topper">
-		<li class=""><a href="/bio" title="Bio">Bio</a></li>
-		<li class=""><a href="/cv" title="CV">CV</a></li>
-		<!-- <li class=""><a href="/projects" title="Projects">Projects</a></li> -->
-		<li class=""><a href="/phd" title="Ph.D.">Ph.D.</a></li>
-		<li class=""><a href="/projects" title="Projects">Projects</a></li>
-		<li class=""><a href="/contact" title="Contact">Contact</a></li>
-	</ul>
-	<h3 class="text-muted"><a href="/">Greg Kiar</a></h3>
-</div> <!-- /header -->
-
-			
-			<div class="swatches" style="text-align:justify">
+<div class="swatches" style="text-align:justify">
 
 <h2>Projects</h2>
 
 <p>Below is an auto-generated list of the repositories I've recently worked on as an approximation of
 my "current projects" (for a more up-to-date list check out my GitHub profile, linked in the footer).</p>
 
-
+{% assign owner = site.github.owner_url %}
 <div class="list-group centerswatch">
-	
-  
+	{% assign repos = site.github.public_repositories | sort:'updated_at' | reverse %}
+  {% assign count = 0 %}
 	<div class="row">
-	
-			
-  			<a href="https://github.com/gkiar/gkiar.github.io" style="border-width:0px; min-height:140px; border-radius:20px; background-color:#f3f3f3; margin:5px; width:31%" class="list-group-item col-sm-4">
-    		<p class="list-group-item-heading" style="display:inline; color:#428bca">gkiar.github.io </p>
-					
-    				<p class="list-group-item-text" style="font-size:small">&raquo;Personal website for Greg Kiar</p>
-					
-				<p class="list-group-item-text" style="font-size:small"><em>(Last modified: 31 Mar 2021)</em></p>
+	{% for repository in repos limit:11  %}
+			{% assign count = count | plus : 1 %}
+  			<a href="{{ repository.html_url }}" style="border-width:0px; min-height:140px; border-radius:20px; background-color:#f3f3f3; margin:5px; width:31%" class="list-group-item col-sm-4">
+    		<p class="list-group-item-heading" style="display:inline; color:#428bca">{{ repository.name }} </p>
+					{% if repository.description %}
+    				<p class="list-group-item-text" style="font-size:small">&raquo;{{ repository.description }}</p>
+					{% endif %}
+				<p class="list-group-item-text" style="font-size:small"><em>(Last modified: {{repository.updated_at | date_to_string }})</em></p>
   			</a>
-			
-	
-			
-  			<a href="https://github.com/gkiar/my-github-projects" style="border-width:0px; min-height:140px; border-radius:20px; background-color:#f3f3f3; margin:5px; width:31%" class="list-group-item col-sm-4">
-    		<p class="list-group-item-heading" style="display:inline; color:#428bca">my-github-projects </p>
-					
-    				<p class="list-group-item-text" style="font-size:small">&raquo;Dev portfolio static site showing a user's Github repos grouped by topic</p>
-					
-				<p class="list-group-item-text" style="font-size:small"><em>(Last modified: 31 Mar 2021)</em></p>
-  			</a>
-			
-	
-			
-  			<a href="https://github.com/gkiar/fuzzafq" style="border-width:0px; min-height:140px; border-radius:20px; background-color:#f3f3f3; margin:5px; width:31%" class="list-group-item col-sm-4">
-    		<p class="list-group-item-heading" style="display:inline; color:#428bca">fuzzafq </p>
-					
-				<p class="list-group-item-text" style="font-size:small"><em>(Last modified: 24 Mar 2021)</em></p>
-  			</a>
-			
-				
+			{% if count >= 3 %}
+				{% assign count = 0 %}
 				</div>
 				<div class="row">
-			
-	
-			
-  			<a href="https://github.com/gkiar/fuzzy" style="border-width:0px; min-height:140px; border-radius:20px; background-color:#f3f3f3; margin:5px; width:31%" class="list-group-item col-sm-4">
-    		<p class="list-group-item-heading" style="display:inline; color:#428bca">fuzzy </p>
-					
-    				<p class="list-group-item-text" style="font-size:small">&raquo;A fuzzy ecosystem for evaluating the stability of your computational tools.</p>
-					
-				<p class="list-group-item-text" style="font-size:small"><em>(Last modified: 19 Mar 2021)</em></p>
-  			</a>
-			
-	
-			
-  			<a href="https://github.com/gkiar/MCA-libmath" style="border-width:0px; min-height:140px; border-radius:20px; background-color:#f3f3f3; margin:5px; width:31%" class="list-group-item col-sm-4">
-    		<p class="list-group-item-heading" style="display:inline; color:#428bca">MCA-libmath </p>
-					
-    				<p class="list-group-item-text" style="font-size:small">&raquo;Perturbation of mathematical functions for evaluating the stability of the pipelines</p>
-					
-				<p class="list-group-item-text" style="font-size:small"><em>(Last modified: 19 Mar 2021)</em></p>
-  			</a>
-			
-	
-			
-  			<a href="https://github.com/gkiar/cv" style="border-width:0px; min-height:140px; border-radius:20px; background-color:#f3f3f3; margin:5px; width:31%" class="list-group-item col-sm-4">
-    		<p class="list-group-item-heading" style="display:inline; color:#428bca">cv </p>
-					
-    				<p class="list-group-item-text" style="font-size:small">&raquo;my curriculum vitae</p>
-					
-				<p class="list-group-item-text" style="font-size:small"><em>(Last modified: 23 Feb 2021)</em></p>
-  			</a>
-			
-				
-				</div>
-				<div class="row">
-			
-	
-			
-  			<a href="https://github.com/gkiar/pyAFQ" style="border-width:0px; min-height:140px; border-radius:20px; background-color:#f3f3f3; margin:5px; width:31%" class="list-group-item col-sm-4">
-    		<p class="list-group-item-heading" style="display:inline; color:#428bca">pyAFQ </p>
-					
-    				<p class="list-group-item-text" style="font-size:small">&raquo;Automated Fiber Quantification ... in Python</p>
-					
-				<p class="list-group-item-text" style="font-size:small"><em>(Last modified: 15 Feb 2021)</em></p>
-  			</a>
-			
-	
-			
-  			<a href="https://github.com/gkiar/coveralls-python" style="border-width:0px; min-height:140px; border-radius:20px; background-color:#f3f3f3; margin:5px; width:31%" class="list-group-item col-sm-4">
-    		<p class="list-group-item-heading" style="display:inline; color:#428bca">coveralls-python </p>
-					
-    				<p class="list-group-item-text" style="font-size:small">&raquo;Show coverage stats online via coveralls.io</p>
-					
-				<p class="list-group-item-text" style="font-size:small"><em>(Last modified: 13 Jan 2021)</em></p>
-  			</a>
-			
-	
-			
-  			<a href="https://github.com/gkiar/aggregate_models" style="border-width:0px; min-height:140px; border-radius:20px; background-color:#f3f3f3; margin:5px; width:31%" class="list-group-item col-sm-4">
-    		<p class="list-group-item-heading" style="display:inline; color:#428bca">aggregate_models </p>
-					
-    				<p class="list-group-item-text" style="font-size:small">&raquo;Evaluating various aggregation methods for MCA-perturbed datasets</p>
-					
-				<p class="list-group-item-text" style="font-size:small"><em>(Last modified: 10 Dec 2020)</em></p>
-  			</a>
-			
-				
-				</div>
-				<div class="row">
-			
-	
-			
-  			<a href="https://github.com/gkiar/netneurotools" style="border-width:0px; min-height:140px; border-radius:20px; background-color:#f3f3f3; margin:5px; width:31%" class="list-group-item col-sm-4">
-    		<p class="list-group-item-heading" style="display:inline; color:#428bca">netneurotools </p>
-					
-    				<p class="list-group-item-text" style="font-size:small">&raquo;Useful tools from the Network Neuroscience Lab</p>
-					
-				<p class="list-group-item-text" style="font-size:small"><em>(Last modified: 13 Oct 2020)</em></p>
-  			</a>
-			
-	
-			
-  			<a href="https://github.com/gkiar/stability-impact" style="border-width:0px; min-height:140px; border-radius:20px; background-color:#f3f3f3; margin:5px; width:31%" class="list-group-item col-sm-4">
-    		<p class="list-group-item-heading" style="display:inline; color:#428bca">stability-impact </p>
-					
-				<p class="list-group-item-text" style="font-size:small"><em>(Last modified: 13 Oct 2020)</em></p>
-  			</a>
-			
-	
-  			<a href="https://github.com/gkiar" style="border-width:0px; min-height:140px; border-radius:20px; background-color:#f3f3f3; margin:5px; width:31%" class="list-group-item col-sm-4">
+			{% endif %}
+	{% endfor %}
+  			<a href="{{ owner }}" style="border-width:0px; min-height:140px; border-radius:20px; background-color:#f3f3f3; margin:5px; width:31%" class="list-group-item col-sm-4">
     		<h4 class="list-group-item-heading" style="display:inline; vertical-align:center"> + more </h4>
   			</a>
 				</div>
   </div>
 </div>
-
-			
-			<div class="footer">
-	<div class="row">
-	<div class="col-sm-3">
-	<p><small>&copy; greg kiar 2020</small></p>
-	</div>
-	<div class="col-sm-2">
-	</div>
-	<div class="col-sm-1">
-	<p><a style="color:#0088cc; border-bottom: none;" href="/pages/gkiar/index.html"><i class='fa fa-home'></i></a></p>
-	</div>
-	<div class="col-sm-1">
-	<p>
-		<a style="color:#0088cc; border-bottom: none;" href="http://www.linkedin.com/in/gkiar"><i class='fa fa-linkedin'></i></a>
-  </p>
-	</div>
-	<div class="col-sm-1">
-	<p>
-		<a style="color:#0088cc; border-bottom: none;" href="http://github.com/gkiar"><i class='fa fa-github'></i></a>
-  </p>
-	</div>
-	<div class="col-sm-1">
-	<p>
-		<a style="color:#0088cc; border-bottom: none;" href="https://scholar.google.com/citations?user=ztw6g7kAAAAJ&hl=en"><i class='ai ai-google-scholar'></i></a>
-  </p>
-	</div>
-	<div class="col-sm-1">
-	<p>
-		<a style="color:#0088cc; border-bottom: none;" href="http://orcid.org/0000-0001-8915-496X"><i class="ai ai-orcid"></i></a>
-  </p>
-	</div>
-	<div class="col-sm-1">
-	<p>
-		<a style="color:#0088cc; border-bottom: none;" href="https://twitter.com/g_kiar"><i class='fa fa-twitter'></i></a>
-  </p>
-	</div>
-	<div class="col-sm-1">
-	<p>
-		<a style="color:#0088cc; border-bottom: none;" href="https://doodle.com/mm/gregkiar/impromptu"><i class='fa fa-calendar'></i></a>
-  </p>
-	</div>
-	</div>
-</div> <!-- /footer -->
-<script>
-
-// On load: build all figures
-$( window ).load(function() {
-  // Create brain slices
-  var brain = brainsprite({
-    canvas: "3Dviewer", // That is the ID of the canvas to build slices into
-    sprite: "spriteImg", // That is the ID of the sprite image that includes all (sagital) brain slices
-    nbSlice: { 'Y':233 , 'Z':189 }
-  });
-});
-</script>
-
-		
-		</div> <!-- /container -->
-	
-	
-		<!-- javascript at the end of the doc so page loads faster -->
-<script src="https://code.jquery.com/jquery.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/library.js"></script>
-
-	
-	</body>
-
-</html>
