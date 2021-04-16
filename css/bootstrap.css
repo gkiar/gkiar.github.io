@@ -5250,6 +5250,10 @@ a.thumbnail:focus {
   border: 1px solid #dddddd;
 }
 
+.list-group-item:hover {
+    background-color:#999;
+}
+
 .list-group-item:first-child {
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
@@ -5271,16 +5275,20 @@ a.thumbnail:focus {
 
 a.list-group-item {
   color: #555555;
+  text-decoration: none;
+  background-color: #f8f8f8;
+  text-align: left;
 }
 
 a.list-group-item .list-group-item-heading {
   color: #333333;
+  text-decoration: none;
 }
 
 a.list-group-item:hover,
 a.list-group-item:focus {
   text-decoration: none;
-  background-color: #f5f5f5;
+  background-color: #ddd;
 }
 
 .list-group-item.active,
